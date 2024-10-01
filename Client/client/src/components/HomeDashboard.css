@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+    padding: 1em;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+/* Different sizes for different sections */
+.recent-activities {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.important-announcements {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.quick-links {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+
+.upcoming-events {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.task-list {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.resource-highlights {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.support-contact {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+.section h2 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 0.5em;
+    margin-bottom: 1em;
+}
+
+.section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.section ul li {
+    margin-bottom: 0.5em;
+}
+
+.quick-links a {
+    margin-bottom: 0.5em;
+    color: #333;
+    text-decoration: none;
+    padding: 0.5em;
+    background-color: #f4f4f4;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.quick-links a:hover {
+    background-color: #ddd;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 1em;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
