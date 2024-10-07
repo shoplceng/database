@@ -31,7 +31,7 @@ function Nav() {
           <span class="material-symbols-outlined"> groups </span>Affiliates</a>
       </li>
       <li>
-        <a href="https://www.rabbitears.info/search.php?request=network_search&network=Shop+LC"><span class="material-symbols-outlined"> dashboard </span>Rabbit Ears</a>
+        <a href="rabbitears"><span class="material-symbols-outlined"> dashboard </span>Rabbit Ears</a>
       </li>
       <li>
         <a href="https://www.channelmaster.com/pages/tv-antenna-map-austin-tx-78728#address=100%20Michael%20Angelo%20Way"><span class="material-symbols-outlined"> dashboard </span>Channel Master</a>
