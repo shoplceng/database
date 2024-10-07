@@ -2,6 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import pg from "pg";
 import axios from 'axios';
+import * as cheerio from 'cheerio';
 import nodemailer from 'nodemailer';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
@@ -343,6 +344,36 @@ app.get('/fetch-data/:id', async (req, res) => {
     console.error('Error executing query', err.stack);
   }
 });
+
+app.get('/getrabbitears', async (req,res)=>{
+  const url = "https://www.rabbitears.info/search.php?request=network_search&network=Shop+LC";
+  try{
+        const response = await axios(url); 
+        const html = response.data;
+        const $ = cheerio.load(html);
+
+        const keys = ['Channel&Resolution', 'Call sign', 'Location', 'Station operator'];
+        const data = $('.oddrow').map((index, element) => {
+            const rowText = $(element).text().trim().split('\n').map(text => text.trim()).filter(Boolean);
+
+            // Create an object by matching the text values with the keys
+            const rowObject = {};
+            rowText.forEach((value, i) => {
+                if (keys[i]) {
+                    rowObject[keys[i]] = value;
+                }
+            });
+
+            return rowObject;
+        }).get(); // Convert Cheerio object to an array
+
+        res.json(data);
+  } catch (error) {
+    res.status(500).json({error: 'Failed to fetch data'});
+  }  
+
+    });
+
 
 const PORT = 5000;
 app.listen(PORT, () => {
