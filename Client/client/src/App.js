@@ -11,6 +11,7 @@ import ProjectManagement from './components/ProjectManagement.js';
 import EditPage from './components/EditPage.tsx';
 import Form from './components/Form.js'
 import SendEmail from './components/email_test.js';
+import ReactVirtualizedTable from './components/rabbitears.js';
 import { AuthProvider, useAuth } from './components/AuthContext.js';
 
 
@@ -38,6 +39,7 @@ const {isAuthenticated} = useAuth();
                     <Route path='edit/:id' element={<EditPage />} />
                     <Route path='form' element={<Form />} />
                     <Route path='email-test' element={<SendEmail />} />
+                    <Route path='rabbitears' element={<ReactVirtualizedTable />}/>
                 </Routes>
 
             </div>
